@@ -41,7 +41,7 @@ const handleCardClick = (id, time) => {
     return;
   } else {
     window.open(`./previews/propiedad${id}${time}_preview.html`, "_blank");
-    // window.open(`https://departamentosexclusivosensantafe.github.io/fichas_departamentosensantafe/previews/propiedad${id}${time}_preview.html`, "_blank");
+    // window.open(`https://departamentosexclusivosensantafe.github.io/fichas/previews/propiedad${id}${time}_preview.html`, "_blank");
   }
 };
 
@@ -173,8 +173,7 @@ function fillForm(id, form) {
     currentPropEntries[prop] = value;
   }
 
-  const BASE_URL =
-    "https://departamentosexclusivosensantafe.github.io/fichas_departamentosensantafe/";
+  const BASE_URL = "https://departamentosexclusivosensantafe.github.io/fichas/";
   const heroPath = currentProperty.hero || "";
   let splitClassName = [],
     formInput,
