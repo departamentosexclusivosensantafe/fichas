@@ -113,10 +113,11 @@
 .nav__dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 5px);
   left: 0;
 
   background-color: lightgray;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 8px;
 
@@ -125,6 +126,6 @@
 }
 
 /* Hover */
-.nav__dropdown:hover .nav__dropdown-content {
+.nav__dropdown:focus-within .nav__dropdown-content {
   display: block;
 }
