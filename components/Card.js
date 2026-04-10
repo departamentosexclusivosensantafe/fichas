@@ -78,6 +78,8 @@ class Card {
 
       const publishedMax = StorageService.getMaxPublishedId();
 
+      alert(publishedMax + " " + this._id);
+
       if (Number(this._id) > publishedMax) {
         alert(
           "Esta propiedad aún no está publicada.\n\n" +
