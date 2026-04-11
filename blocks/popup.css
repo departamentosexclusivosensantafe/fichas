@@ -239,8 +239,8 @@
 
 .preview__content {
   display: flex;
-  /* justify-content: space-between; */
-  flex-direction: column;
+  justify-content: space-between;
+  /* flex-direction: column; */
   gap: 20px;
   max-height: 90vh;
 }
@@ -450,5 +450,13 @@
   .popup__content_content_image {
     max-width: 75vw;
     padding: 0;
+  }
+
+  .preview__content {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    gap: 20px;
+    max-height: 90vh;
   }
 }
