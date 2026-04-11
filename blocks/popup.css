@@ -240,7 +240,6 @@
 .preview__content {
   display: flex;
   justify-content: space-between;
-  /* flex-direction: column; */
   gap: 20px;
   max-height: 90vh;
 }
@@ -308,7 +307,7 @@
 }
 
 .preview {
-  /* max-width: 1000px; */
+  max-width: 1000px;
   width: 100%;
 }
 
@@ -454,9 +453,7 @@
 
   .preview__content {
     display: flex;
-    /* justify-content: space-between; */
     flex-direction: column;
-    gap: 20px;
     max-height: 90vh;
   }
 }
