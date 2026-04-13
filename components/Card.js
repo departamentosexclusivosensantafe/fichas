@@ -122,7 +122,14 @@ class Card {
   }
 
   _handleImageLoad(evt) {
-    evt.target.append(evt.target);
+    // alert(
+    //   "Image loaded successfully!\n" +
+    //     evt.target.className +
+    //     "\n" +
+    //     evt.target.src,
+    // );
+    // evt.target.append(evt.target);
+    console.log("imagen cargada!!!  " + evt.target.src);
   }
 
   _loadImage(imageElement, loadCallback, errorCallback) {
