@@ -9,9 +9,24 @@
   height: max-content;
 }
 
-.card__image {
+.card__image-container {
+  position: relative;
+  width: 100%;
   aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card__image_loaded {
+  opacity: 1;
 }
 
 .card__descriptionContainer {
@@ -187,8 +202,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  display: none;
 }
 
-.card__spinner_hidden {
-  display: none;
+.card__spinner_visible {
+  display: block;
 }

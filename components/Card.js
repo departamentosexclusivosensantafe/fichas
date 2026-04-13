@@ -24,7 +24,6 @@ class Card {
     this._handleCardClick = handleCardClick;
     this._confirmationPopup = confirmationPopup;
     this._handleEdit = handleEdit;
-    this._spinner = null;
   }
 
   _like(evt, cardLikeButton) {
@@ -124,7 +123,7 @@ class Card {
   // }
 
   _handleLoadError(evt) {
-    this._spinner.classList.add("card__spinner_hidden");
+    this._spinner.classList.remove("card__spinner_visible");
     alert("Image not loaded. ERROR! ERROR!" + evt.target.src);
   }
 
@@ -135,12 +134,13 @@ class Card {
     //     "\n" +
     //     evt.target.src,
     // );
-    this._spinner.classList.add("card__spinner_hidden");
+    this._spinner.classList.remove("card__spinner_visible");
+    evt.target.classList.add("card__image_loaded");
     console.log("imagen cargada!!!  " + evt.target.src);
   }
 
   _loadImage(imageElement, loadCallback, errorCallback) {
-    this._spinner.classList.remove("card__spinner_hidden");
+    this._spinner.classList.add("card__spinner_visible");
     // img.addEventListener("load", loadCallback);
     // img.addEventListener("error", errorCallback);
     imageElement.onload = loadCallback;
