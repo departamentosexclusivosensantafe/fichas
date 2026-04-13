@@ -175,34 +175,20 @@
 
 /* Spinner */
 
-.spinner {
-  width: 1em;
-  height: 1em;
-  margin: 50px auto;
+.card__spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid lightgray;
+  border-top: 3px solid black;
   border-radius: 50%;
-  display: none;
-}
+  animation: spin 1s linear infinite;
 
-.spinner_visible {
-  display: block;
-}
-
-.spinner i::after {
   position: absolute;
-  clip: rect(0, 1em, 1em, 0.5em);
-  width: 1em;
-  height: 1em;
-  content: "";
-  animation: spinner-circle 0.8s ease-in-out infinite;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 0.1em #ffdb4d;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes spinner-circle {
-  0% {
-    transform: rotate(-180deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
+.card__spinner_hidden {
+  display: none;
 }
