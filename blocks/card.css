@@ -190,25 +190,21 @@
 
 /* Spinner */
 
-.card__spinner {
-  /* width: 30px;
+/* .card__spinner { */
+/* width: 30px;
   height: 30px; */
-  /* border: 3px solid lightgray; */
-  /* border-top: 3px solid black;
+/* border: 3px solid lightgray; */
+/* border-top: 3px solid black;
   border-radius: 50%;
   animation: spin 1s linear infinite; */
 
-  /* position: absolute;
+/* position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); */
 
-  display: none;
-}
-
-.card__spinner_visible {
-  display: block;
-}
+/* display: none;
+} */
 
 .card_spinner {
   position: absolute;
@@ -223,6 +219,10 @@
   border-radius: 50%;
   box-shadow: inset 0 0 0 0.3em lightgray;
   display: none;
+}
+
+.card__spinner_visible {
+  display: block;
 }
 
 @keyframes spinner-circle {
