@@ -178,8 +178,10 @@ function fillPreview(previewData) {
 </html>`;
   }
 
-  StorageService.setMaxPublishedId(id);
-
+  /*--------- En caso de que estemos editando una propiedad ya publicada ---------*/
+  if (Number(id) > StorageService.getMaxPublishedId()) {
+    StorageService.setMaxPublishedId(id);
+  }
   const htmlWithAgent = generateHTML(true);
   const htmlWithoutAgent = generateHTML(false);
 
