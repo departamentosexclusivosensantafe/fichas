@@ -49,6 +49,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.property__hero-slider {
+  position: relative;
+}
+
 .property__hero-image {
   width: 100%;
   object-fit: cover;
@@ -156,9 +160,13 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  width: 6%;
-  padding: 10px 2px;
+  /* width: 6%;
+  padding: 10px 2px; */
   transition: all 0.2s ease;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
 }
 
 .property__btn:hover {
@@ -175,8 +183,10 @@ body {
 }
 
 .property__btn_image {
-  width: 50%;
-  height: 8vh;
+  /* width: 50%;
+  height: 8vh; */
+  width: 60%;
+  height: auto;
 }
 
 .property__counter {
