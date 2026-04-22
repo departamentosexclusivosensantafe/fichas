@@ -122,19 +122,6 @@ function fillPreview(previewData) {
       <div>
         <p class="property__description">${description}</p>
       </div>
-
-      <div class="property__image-gallery">
-        <img class="property__image" src="${absoluteGallery[0]}" alt="${title}">
-        <button class="property__btn property__btn-left" id="btnBack">
-          <img class="property__btn_image" src="${baseUrl}images/arrow_back.png" alt="Left arrow">
-        </button>
-        <button class="property__btn property__btn-right" id="btnForward">
-          <img class="property__btn_image" src="${baseUrl}images/arrow_forward.png" alt="Right arrow">
-        </button>
-      </div>
-      <div class="property__counter" id="imageCounter">
-        1 / 1
-      </div>
         ${getAgentBlock(showAgent)}
       <div>
       <p class="property__location-label">${address}</p>
