@@ -32,7 +32,6 @@ const propertiesData = StorageService.getProperties(Properties);
 
 const handleCardClick = (id, time) => {
   const publishedMax = StorageService.getMaxPublishedId();
-
   if (Number(id) > publishedMax) {
     alert(
       "Esta propiedad aún no está publicada.\n\n" +
