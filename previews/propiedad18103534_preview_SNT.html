@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Departamento en renta en la V Sección de Polanco</title>
+
+<link rel="stylesheet" href="../blocks/property.css" />
+
+<meta property="og:title" content="Departamento en renta en la V Sección de Polanco" />
+<meta property="og:description" content="Excelente ubicación." />
+<meta property="og:image" content="https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_hero.jpeg" />
+<meta property="og:url" content="https://departamentosexclusivosensantafe.github.io/fichas/previews/propiedad18103534_preview.html" />
+<meta property="og:type" content="website" />
+
+</head>
+
+<body class="theme-modern">
+  <main class="property">
+
+    <section class="property__content">
+
+      <div>
+        <img class="property__hero-image" src="https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_hero.jpeg" alt="Departamento en renta en la V Sección de Polanco" />
+      </div>
+
+      <div>
+        <h1 class="property__title">Departamento en renta en la V Sección de Polanco</h1>
+        <p class="property__price">32,000.00 MXN</p>
+      </div>
+
+      <div>
+        <ul class="property__features-list">
+          <li class="property__feature">120 m²</li><li class="property__feature">2 Recámaras</li><li class="property__feature">1 Baño</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="property__description">Excelente ubicación.</p>
+      </div>
+
+      <div class="property__image-gallery">
+        <img class="property__image" src="https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_1.jpeg" alt="Departamento en renta en la V Sección de Polanco">
+        <button class="property__btn property__btn-left" id="btnBack">
+          <img class="property__btn_image" src="https://departamentosexclusivosensantafe.github.io/fichas/images/arrow_back.png" alt="Left arrow">
+        </button>
+        <button class="property__btn property__btn-right" id="btnForward">
+          <img class="property__btn_image" src="https://departamentosexclusivosensantafe.github.io/fichas/images/arrow_forward.png" alt="Right arrow">
+        </button>
+      </div>
+      <div class="property__counter" id="imageCounter">
+        1 / 1
+      </div>
+        
+      <div>
+      <p class="property__location-label">Av. Isaac Newton, Polanco V Seccion</p>
+        <a
+        href="https://www.google.com/maps?q=Av.%20Isaac%20Newton%2C%20Polanco%20V%20Seccion"
+        target="_blank"
+        class="property__map-link"
+        >
+          Ir a ubicación &rarr;
+        </a>
+      </div>
+    </section>
+
+  </main>
+<script>
+  (function () {
+    const images = ["https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_1.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_2.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_3.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_4.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_5.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_7.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_8.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_9.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_10.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_11.jpeg","https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp18_12.jpeg"];
+    let currentIndex = 0;
+
+    const img = document.querySelector(".property__image");
+    const btnBack = document.getElementById("btnBack");
+    const btnForward = document.getElementById("btnForward");
+    const counter = document.getElementById("imageCounter");
+
+    if (!img || !btnBack || !btnForward || images.length === 0) return;
+
+    function updateSlider() {
+      img.src = images[currentIndex];
+
+      if (counter) {
+        counter.textContent = (currentIndex + 1) + " / " + images.length;
+      }
+    }
+
+    // 🔹 render inicial
+    updateSlider();
+
+    btnForward.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateSlider();
+    });
+
+    btnBack.addEventListener("click", () => {
+      currentIndex =
+        (currentIndex - 1 + images.length) % images.length;
+      updateSlider();
+    });
+  })();
+
+</script>
+
+</body>
+</html>
