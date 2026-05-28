@@ -149,10 +149,16 @@ function fillPreview(previewData) {
     if (!img || !btnBack || !btnForward || images.length === 0) return;
 
     function updateSlider() {
-      img.src = images[currentIndex];
+      img.style.opacity = 0;
+
+      setTimeout(() => {
+        img.src = images[currentIndex];
+        img.style.opacity = 1;
+      }, 150);
 
       if (counter) {
-        counter.textContent = (currentIndex + 1) + " / " + images.length;
+        counter.textContent =
+          (currentIndex + 1) + " / " + images.length;
       }
     }
 
