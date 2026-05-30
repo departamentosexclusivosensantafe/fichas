@@ -69,13 +69,33 @@
   height: 1.5rem;
 }
 
-.card__description {
+.card__bedrooms,
+.card__bathrooms,
+.card__parking,
+.card__construction {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.card__bedrooms {
+  margin-top: 8px;
+}
+
+.card__features {
+  margin-top: 15px;
   font-weight: 400;
   height: 4.5rem;
   overflow: auto;
 }
 
-.card__features {
+.card__amenities {
+  font-weight: 400;
+  height: 4.5rem;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.card__description {
   font-weight: 400;
   height: 4.5rem;
   overflow: auto;

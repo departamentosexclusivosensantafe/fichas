@@ -7,6 +7,10 @@ function fillPreview(previewData) {
   const image = previewData.imageOG.trim();
   const baseUrl = previewData.urlProject.trim();
   const price = previewData.price.trim();
+  const bedrooms = previewData.bedrooms.trim();
+  const bathrooms = previewData.bathrooms.trim();
+  const parking = previewData.parking.trim();
+  const construction = previewData.construction.trim();
   const time = previewData.time.trim();
   const theme = previewData.theme.trim() || "theme-modern";
   const address = previewData.address.trim();
@@ -114,6 +118,17 @@ function fillPreview(previewData) {
       </div>
 
       <div>
+        <h2>Details</h2>
+        <ul class="property__features-list">
+          <li>${bedrooms}</li>
+          <li>${bathrooms}</li>
+          <li>${parking}</li>
+          <li>${construction}</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>More details</h2>
         <ul class="property__features-list">
           ${featuresHtml}
         </ul>

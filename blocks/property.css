@@ -43,21 +43,38 @@ body {
 }
 
 /* HERO */
-
+/* (Fichas V2)*/
 .property__hero-slider {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #e5e7eb;
 }
 
+/* (Fichas V2)  */
 .property__hero-image {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
   border-radius: 8px;
   transition: opacity 0.3s ease-in-out;
+  display: block;
+  touch-action: pan-y;
 }
+
+/* .property__hero {       (Fichas V!)
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.property__hero-image {      (Fichas V1)
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+} */
 
 /* CONTENIDO */
 .property__content {
@@ -129,7 +146,7 @@ body {
   font-size: 0.85rem;
 }
 
-/* GALERÍA */
+/* GALERÍA (Fichas V1) */
 .property__image-gallery {
   position: relative;
   width: 82%;
@@ -139,6 +156,7 @@ body {
   margin: 0 auto 0.6rem;
 }
 
+/* (Fichas V1)  */
 .property__image {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -161,8 +179,14 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  width: 5%;
-  padding: 4px;
+  /* width: 5%;     Fichas V1
+  padding: 4px; */
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .property__btn:hover {
@@ -179,8 +203,10 @@ body {
 }
 
 .property__btn_image {
-  width: 60%;
-  height: auto;
+  /* width: 60%;     Fichas V1
+  height: auto; */
+  width: 16px;
+  height: 16px;
 }
 
 .property__counter {
@@ -644,5 +670,18 @@ body {
 
   .property__price {
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .property__btn {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+  }
+
+  .property__btn_image {
+    width: 10px;
+    height: 10px;
   }
 }

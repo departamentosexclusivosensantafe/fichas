@@ -13,6 +13,11 @@ class Card {
     this._hero = data.hero;
     this._title = data.title;
     this._price = data.price;
+    this._bedrooms = data.bedrooms;
+    this._bathrooms = data.bathrooms;
+    this._parking = data.parking;
+    this._construction = data.construction;
+    this._amenities = data.amenities;
     this._description = data.description;
     this._features = data.features;
     this._gallery = data.gallery;
@@ -41,6 +46,14 @@ class Card {
   _setEventListeners() {
     const cardImage = this._cardElement.querySelector(".card__image");
     cardImage.addEventListener("click", () => {
+      const publishedMax = StorageService.getMaxPublishedId();
+      if (Number(this._id) > publishedMax) {
+        alert(
+          "Esta propiedad aún no está publicada.\n\n" +
+            "Debes generar el preview y subirlo a GitHub dentro de la carpeta /previews para poder compartirla.",
+        );
+        return;
+      }
       if (this._id !== 0) {
         this._handleCardClick(this._id, this._time);
       }
@@ -73,6 +86,7 @@ class Card {
     const cardWhatsappButton = this._cardElement.querySelector(
       ".card__whatsapp-button",
     );
+
     cardWhatsappButton.addEventListener("click", (evt) => {
       evt.stopPropagation();
 
@@ -172,9 +186,19 @@ class Card {
     const cardPrice = this._cardElement.querySelector(".card__price");
     cardPrice.textContent = this._price;
 
-    const cardDescription =
-      this._cardElement.querySelector(".card__description");
-    cardDescription.textContent = this._description;
+    const cardBedrooms = this._cardElement.querySelector(".card__bedrooms");
+    cardBedrooms.textContent = `${this._bedrooms} recámara(s)`;
+
+    const cardBathrooms = this._cardElement.querySelector(".card__bathrooms");
+    cardBathrooms.textContent = `${this._bathrooms} baño(s)`;
+
+    const cardParking = this._cardElement.querySelector(".card__parking");
+    cardParking.textContent = `${this._parking} estacionamiento(s)`;
+
+    const cardConstruction = this._cardElement.querySelector(
+      ".card__construction",
+    );
+    cardConstruction.textContent = `${this._construction} m²`;
 
     const cardFeatures = this._cardElement.querySelector(".card__features");
     const pattern = /[^;\n\t]+/g;
@@ -183,8 +207,21 @@ class Card {
     for (let feature of featuresArray) {
       featuresStringDisplay += "- " + feature + "<br>";
     }
-
     cardFeatures.innerHTML = featuresStringDisplay;
+
+    const cardAmenities = this._cardElement.querySelector(".card__amenities");
+    if (this._amenities) {
+      const amenitiesArray = this._amenities.match(pattern);
+      let amenitiesStringDisplay = "";
+      for (let amenitie of amenitiesArray) {
+        amenitiesStringDisplay += "- " + amenitie + "<br>";
+      }
+      cardAmenities.innerHTML = amenitiesStringDisplay;
+    }
+
+    const cardDescription =
+      this._cardElement.querySelector(".card__description");
+    cardDescription.textContent = this._description;
 
     const imageGallery = this._cardElement.querySelector(".card__gallery");
     for (let i = 0; i < this._gallery.length; i++) {

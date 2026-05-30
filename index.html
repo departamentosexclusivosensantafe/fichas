@@ -72,8 +72,13 @@
                   <p class="card__id"></p>
                   <p class="card__title"></p>
                   <p class="card__price"></p>
-                  <p class="card__description"></p>
+                  <p class="card__bedrooms"></p>
+                  <p class="card__bathrooms"></p>
+                  <p class="card__parking"></p>
+                  <p class="card__construction"></p>
                   <p class="card__features"></p>
+                  <p class="card__amenities"></p>
+                  <p class="card__description"></p>
                   <div class="card__gallery">
                     <!-- Galeria de imagenes -->
                   </div>
@@ -139,6 +144,64 @@
               minlength="2"
             />
             <span class="popup__error popup__error_price"></span>
+            <!-- <label class="input__label">Recámaras</label> <br /> -->
+            <input
+              class="popup__input popup__input_type_card-bedrooms"
+              name="bedrooms"
+              required
+              placeholder="Recámaras"
+              type="number"
+              min="0"
+            />
+            <span class="popup__error popup__error_bedrooms"></span>
+            <!-- <label class="input__label">Baño</label> <br /> -->
+            <input
+              class="popup__input popup__input_type_card-bathrooms"
+              name="bathrooms"
+              required
+              placeholder="Baños"
+              type="text"
+              minlength="2"
+            />
+            <span class="popup__error popup__error_bathrooms"></span>
+            <!-- <label class="input__label">Estacionamiento</label> <br /> -->
+            <input
+              class="popup__input popup__input_type_card-parking"
+              name="parking"
+              required
+              placeholder="Estacionamientos"
+              type="number"
+              min="0"
+            />
+            <span class="popup__error popup__error_parking"></span>
+            <!-- <label class="input__label">Construcción</label> <br /> -->
+            <input
+              class="popup__input popup__input_type_card-construction"
+              name="construction"
+              required
+              placeholder="Construcción (m²)"
+              type="number"
+              min="1"
+            />
+            <span class="popup__error popup__error_construction"></span>
+            <!-- <label class="input__label">Features</label> <br /> -->
+            <textarea
+              class="popup__input popup__textarea input__textarea-features"
+              name="features"
+              placeholder="Caracterísicas adicionales (una por renglón)"
+              required
+              minlength="2"
+            ></textarea>
+            <span class="popup__error popup__error_features"></span>
+            <!-- <label class="input__label">Amenidades</label> -->
+            <textarea
+              class="popup__input popup__textarea input__textarea-amenities"
+              name="amenities"
+              placeholder="Amenidades (una por renglón)"
+              required
+              minlength="2"
+            ></textarea>
+            <span class="popup__error popup__error_amenities"></span>
             <!-- <label class="input__label">Descripción</label> <br /> -->
             <textarea
               class="popup__input popup__textarea input__textarea-description"
@@ -148,15 +211,6 @@
               minlength="2"
             ></textarea>
             <span class="popup__error popup__error_description"></span>
-            <!-- <label class="input__label">Features</label> <br /> -->
-            <textarea
-              class="popup__input popup__textarea input__textarea-features"
-              name="features"
-              placeholder="Features (una por renglón)"
-              required
-              minlength="2"
-            ></textarea>
-            <span class="popup__error popup__error_features"></span>
             <!-- <label class="input__label">Galería</label> -->
             <textarea
               class="popup__input popup__textarea input__textarea-gallery"
@@ -287,9 +341,46 @@
                   type="text"
                   minlength="2"
                 />
+                <span class="popup__error popup__error_price"></span>
+                <!-- <label class="input__label">Recámaras</label> <br /> -->
+                <input
+                  class="popup__input popup__input_type_preview-bedrooms"
+                  name="bedrooms"
+                  required
+                  placeholder="Recámaras"
+                  type="number"
+                />
+                <span class="popup__error popup__error_bedrooms"></span>
+                <!-- <label class="input__label">Baño</label> <br /> -->
+                <input
+                  class="popup__input popup__input_type_preview-bathrooms"
+                  name="bathrooms"
+                  required
+                  placeholder="Baños"
+                  type="text"
+                  minlength="2"
+                />
+                <span class="popup__error popup__error_bathrooms"></span>
               </div>
               <div class="preview__right">
-                <span class="popup__error popup__error_price"></span>
+                <!-- <label class="input__label">Estacionamiento</label> <br /> -->
+                <input
+                  class="popup__input popup__input_type_preview-parking"
+                  name="parking"
+                  required
+                  placeholder="Estacionamientos"
+                  type="number"
+                />
+                <span class="popup__error popup__error_parking"></span>
+                <!-- <label class="input__label">Construcción</label> <br /> -->
+                <input
+                  class="popup__input popup__input_type_preview-construction"
+                  name="construction"
+                  required
+                  placeholder="Construcción (m²)"
+                  type="number"
+                />
+                <span class="popup__error popup__error_construction"></span>
                 <!-- <label class="input__label">Features</label> -->
                 <textarea
                   class="popup__input popup__textarea popup__input_type_preview-features"
@@ -308,6 +399,15 @@
                   minlength="2"
                 ></textarea>
                 <span class="popup__error popup__error_gallery"></span>
+                <!-- <label class="input__label">Amenidades</label> -->
+                <textarea
+                  class="popup__input popup__textarea popup__input_type_preview-amenities"
+                  name="amenities"
+                  placeholder="Amenidades (una por renglón)"
+                  required
+                  minlength="2"
+                ></textarea>
+                <span class="popup__error popup__error_amenities"></span>
                 <!-- <label class="input__label">Address</label> -->
                 <input
                   class="popup__input popup__input_type_preview-address"
