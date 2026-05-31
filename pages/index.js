@@ -232,6 +232,7 @@ function handlePreviewFormSubmit(formData) {
     parking: formData.parking,
     construction: formData.construction,
     features: formData.features,
+    amenities: formData.amenities,
     gallery: formData.gallery,
     time: formData.time,
     theme: formData.theme,

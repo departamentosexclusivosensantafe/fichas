@@ -25,6 +25,8 @@ function fillPreview(previewData) {
     featuresList = featuresRaw.split(/[\n]/);
   }
 
+  const amenities = previewData.amenities;
+
   const gallery = previewData.gallery || [];
 
   if (!image.startsWith("https://")) {
@@ -119,11 +121,11 @@ function fillPreview(previewData) {
 
       <div>
         <h2>Details</h2>
-        <ul class="property__features-list">
-          <li>${bedrooms}</li>
-          <li>${bathrooms}</li>
-          <li>${parking}</li>
-          <li>${construction}</li>
+        <ul class="property__details-list">
+          <li>${bedrooms} Recámara(s)</li>
+          <li>${bathrooms} Baño(s)</li>
+          <li>${parking} Estacionamiento(s)</li>
+          <li>${construction}m²</li>
         </ul>
       </div>
 
@@ -133,7 +135,10 @@ function fillPreview(previewData) {
           ${featuresHtml}
         </ul>
       </div>
-
+      <div>
+        <h2>Amenidades</h2>
+        <p class="property__amenities">${amenities}</p>
+      </div>
       <div>
         <p class="property__description">${description}</p>
       </div>
