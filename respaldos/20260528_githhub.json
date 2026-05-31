@@ -1164,7 +1164,7 @@
     {
       "id": 26,
       "hero": "./images/City_Blue_Santafe/City_Blue_Santafe_hero.jpeg",
-      "title": "Departamento en renta amueblado en City Bliue, Santa Fe",
+      "title": "Departamento en renta amueblado en City Blue, Santa Fe",
       "price": "35,000.00 MXN",
       "description": "Frente a la Universidad Iberoamericana.\nAmenidades exclusivas: alberca, gym, restaurante, padel, salón de eventos, cine, sauna, vapor y salón inglés.",
       "features": "68m²\n2 Recámaras\n2 Baños\n2 Estacionamientos\nLa renta incluye mantenimiento y servicios",
@@ -1225,5 +1225,5 @@
       "isLiked": false
     }
   ],
-  "publishedMaxId": 27
+  "publishedMaxId": 26
 }
