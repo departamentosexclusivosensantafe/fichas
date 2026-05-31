@@ -7,10 +7,10 @@ function fillPreview(previewData) {
   const image = previewData.imageOG.trim();
   const baseUrl = previewData.urlProject.trim();
   const price = previewData.price.trim();
-  const bedrooms = previewData.bedrooms.trim();
-  const bathrooms = previewData.bathrooms.trim();
-  const parking = previewData.parking.trim();
-  const construction = previewData.construction.trim();
+  const bedrooms = (previewData.bedrooms || "").trim();
+  const bathrooms = (previewData.bathrooms || "").trim();
+  const parking = (previewData.parking || "").trim();
+  const construction = (previewData.construction || "").trim();
   const time = previewData.time.trim();
   const theme = previewData.theme.trim() || "theme-modern";
   const address = previewData.address.trim();
@@ -29,7 +29,7 @@ function fillPreview(previewData) {
     .map((f) => `<li class="property__feature">${f.trim()}</li>`)
     .join("");
 
-  const amenitiesRaw = previewData.amenities;
+  const amenitiesRaw = previewData.amenities || "";
   let amenitiesList = [];
 
   if (Array.isArray(amenitiesRaw)) {
@@ -37,10 +37,6 @@ function fillPreview(previewData) {
   } else if (typeof amenitiesRaw === "string") {
     amenitiesList = amenitiesRaw.split(/[\n]/);
   }
-
-  // const amenitiesHtml = amenitiesList
-  //   .map((f) => `<li class=property__feature">${f.trim()}</li>`)
-  //   .join("");
 
   const amenitiesHtml = amenitiesList
     .map(
