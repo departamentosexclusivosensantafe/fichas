@@ -119,6 +119,26 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* DETAILS */
+.property__details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.property__detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.property__detail-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
 /* FEATURES */
 .property__features-list {
   list-style: none;

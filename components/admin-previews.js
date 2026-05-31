@@ -25,7 +25,22 @@ function fillPreview(previewData) {
     featuresList = featuresRaw.split(/[\n]/);
   }
 
-  const amenities = previewData.amenities;
+  const featuresHtml = featuresList
+    .map((f) => `<li class="property__feature">${f.trim()}</li>`)
+    .join("");
+
+  const amenitiesRaw = previewData.amenities;
+  let amenitiesList = [];
+
+  if (Array.isArray(amenitiesRaw)) {
+    amenitiesList = amenitiesRaw;
+  } else if (typeof amenitiesRaw === "string") {
+    amenitiesList = amenitiesRaw.split(/[\n]/);
+  }
+
+  const amenitiesHtml = amenitiesList
+    .map((f) => `<li class=property__feature">${f.trim()}</li>`)
+    .join("");
 
   const gallery = previewData.gallery || [];
 
@@ -41,10 +56,6 @@ function fillPreview(previewData) {
 
   // Ahora el preview vive dentro de /previews/
   const previewUrl = `${baseUrl}previews/propiedad${id}${time}_preview.html`;
-
-  const featuresHtml = featuresList
-    .map((f) => `<li class="property__feature">${f.trim()}</li>`)
-    .join("");
 
   const absoluteGallery = gallery.map((img) => {
     const absolutePath = baseUrl + img.slice(2);
@@ -119,14 +130,58 @@ function fillPreview(previewData) {
         <p class="property__price">${price}</p>
       </div>
 
-      <div>
-        <h2>Details</h2>
-        <ul class="property__details-list">
-          <li>${bedrooms} Recámara(s)</li>
-          <li>${bathrooms} Baño(s)</li>
-          <li>${parking} Estacionamiento(s)</li>
-          <li>${construction}m²</li>
-        </ul>
+      // <div>
+      //   <h2>Details</h2>
+      //   <ul class="property__details-list">
+      //     <li>${bedrooms} Recámara(s)</li>
+      //     <li>${bathrooms} Baño(s)</li>
+      //     <li>${parking} Estacionamiento(s)</li>
+      //     <li>${construction}m²</li>
+      //   </ul>
+      // </div>
+
+      <h2 class="property__section-title">
+        Características principales
+      </h2>
+
+      <div class="property__details-grid">
+
+        <div class="property__detail">
+          <img
+            class="property__detail-icon"
+            src="../images/icons/bed.svg"
+            alt=""
+          />
+          <span>${bedrooms} Recámara(s)</span>
+        </div>
+
+        <div class="property__detail">
+          <img
+            class="property__detail-icon"
+            src="../images/icons/bath.svg"
+            alt=""
+          />
+          <span>${bathrooms} Baño(s)</span>
+        </div>
+
+        <div class="property__detail">
+          <img
+            class="property__detail-icon"
+            src="../images/icons/car.svg"
+            alt=""
+          />
+          <span>${parking} Estacionamiento(s)</span>
+        </div>
+
+        <div class="property__detail">
+          <img
+            class="property__detail-icon"
+            src="../images/icons/ruler.svg"
+            alt=""
+          />
+          <span>${construction} m²</span>
+        </div>
+
       </div>
 
       <div>
@@ -137,7 +192,7 @@ function fillPreview(previewData) {
       </div>
       <div>
         <h2>Amenidades</h2>
-        <p class="property__amenities">${amenities}</p>
+        <p class="property__features-list">${amenitiesHtml}</p>
       </div>
       <div>
         <p class="property__description">${description}</p>
