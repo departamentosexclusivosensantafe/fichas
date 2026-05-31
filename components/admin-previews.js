@@ -148,9 +148,7 @@ function fillPreview(previewData) {
       <h2 class="property__section-title">
         Características principales
       </h2>
-
       <div class="property__details-grid">
-
         <div class="property__detail">
           <img
             class="property__detail-icon"
@@ -186,7 +184,6 @@ function fillPreview(previewData) {
           />
           <span>${construction} m²</span>
         </div>
-
       </div>
 
       <div>
@@ -195,26 +192,22 @@ function fillPreview(previewData) {
           ${featuresHtml}
         </ul>
       </div>
-      <div>
-        // <h2 class="property__section-title">
-        //   Amenidades
-        // </h2>
 
-        // <div class="property__amenities-grid">
-        //   ${amenitiesHtml}
-        // </div>
-        <h2 class="property__section-title">
+      <div>
+         <h2 class="property__section-title">
           Amenidades
         </h2>
-
         <div class="property__amenities-grid">
           ${amenitiesHtml}
         </div>
       </div>
+
       <div>
         <p class="property__description">${description}</p>
       </div>
+
         ${getAgentBlock(showAgent)}
+
       <div>
       <p class="property__location-label">${address}</p>
         <a
@@ -226,7 +219,6 @@ function fillPreview(previewData) {
         </a>
       </div>
     </section>
-
   </main>
 <script>
   (function () {
