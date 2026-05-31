@@ -38,8 +38,23 @@ function fillPreview(previewData) {
     amenitiesList = amenitiesRaw.split(/[\n]/);
   }
 
+  // const amenitiesHtml = amenitiesList
+  //   .map((f) => `<li class=property__feature">${f.trim()}</li>`)
+  //   .join("");
+
   const amenitiesHtml = amenitiesList
-    .map((f) => `<li class=property__feature">${f.trim()}</li>`)
+    .map(
+      (a) => `
+      <div class="property__amenity">
+        <img
+          class="property__amenity-icon"
+          src="../images/icons/check.svg"
+          alt=""
+        />
+        <span>${a.trim()}</span>
+      </div>
+    `,
+    )
     .join("");
 
   const gallery = previewData.gallery || [];
@@ -130,16 +145,6 @@ function fillPreview(previewData) {
         <p class="property__price">${price}</p>
       </div>
 
-      // <div>
-      //   <h2>Details</h2>
-      //   <ul class="property__details-list">
-      //     <li>${bedrooms} Recámara(s)</li>
-      //     <li>${bathrooms} Baño(s)</li>
-      //     <li>${parking} Estacionamiento(s)</li>
-      //     <li>${construction}m²</li>
-      //   </ul>
-      // </div>
-
       <h2 class="property__section-title">
         Características principales
       </h2>
@@ -185,14 +190,26 @@ function fillPreview(previewData) {
       </div>
 
       <div>
-        <h2>More details</h2>
+        <h2>Características</h2>
         <ul class="property__features-list">
           ${featuresHtml}
         </ul>
       </div>
       <div>
-        <h2>Amenidades</h2>
-        <p class="property__features-list">${amenitiesHtml}</p>
+        // <h2 class="property__section-title">
+        //   Amenidades
+        // </h2>
+
+        // <div class="property__amenities-grid">
+        //   ${amenitiesHtml}
+        // </div>
+        <h2 class="property__section-title">
+          Amenidades
+        </h2>
+
+        <div class="property__amenities-grid">
+          ${amenitiesHtml}
+        </div>
       </div>
       <div>
         <p class="property__description">${description}</p>

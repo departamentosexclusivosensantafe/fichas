@@ -160,6 +160,26 @@ body {
   transform: translateY(-2px);
 }
 
+/* AMENITIES */
+.property__amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  margin-bottom: 24px;
+}
+
+.property__amenity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.property__amenity-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 /* DESCRIPCIÓN */
 .property__description {
   margin-bottom: 1.5rem;
