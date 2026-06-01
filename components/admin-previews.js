@@ -17,10 +17,12 @@ function fillPreview(previewData) {
   const amenityIcons = {
     Alberca: "pool.svg",
     Gym: "gym.svg",
+    Gimnasio: "gym.svg",
     Cine: "clapperboard.svg",
     "Sala de proyección": "film.svg",
     Padel: "padel.svg",
-    "Ludoteca / area de juegos infantiles": "playground.svg",
+    Ludoteca: "playground.svg",
+    "Área de juegos infantiles": "playground.svg",
     Jacuzzi: "jacuzzi.svg",
     Sauna: "sauna.svg",
     Vapor: "steam.svg",
@@ -33,6 +35,7 @@ function fillPreview(previewData) {
     "Seguridad 24hrs": "security.svg",
     "Area de mascotas": "pets.svg",
     "Salón de eventos": "salon.svg",
+    "Salón de fiestas": "salon.svg",
     "Business Center": "business.svg",
     "Salón inglés": "tea.svg",
     "Sala de jóvenes": "boy.svg",
@@ -209,7 +212,7 @@ function fillPreview(previewData) {
             src="../images/icons/bath.svg"
             alt=""
           />
-          <span>${bathrooms} Baño(s)</span>
+          <span class="property__detail-text">${bathrooms} Baño(s)</span>
         </div>
 
         <div class="property__detail">
@@ -294,12 +297,12 @@ function fillPreview(previewData) {
     if (!img || !btnBack || !btnForward || images.length === 0) return;
 
     function updateSlider() {
-      img.style.opacity = 0;
+      // img.style.opacity = 0;
 
-      setTimeout(() => {
+      // setTimeout(() => {
         img.src = images[currentIndex];
-        img.style.opacity = 1;
-      }, 150);
+      //   img.style.opacity = 1;
+      // }, 150);
 
       if (counter) {
         counter.textContent =

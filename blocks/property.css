@@ -59,7 +59,7 @@ body {
   object-fit: contain;
   object-position: center center;
   border-radius: 8px;
-  transition: opacity 0.3s ease-in-out;
+  /* transition: opacity 0.3s ease-in-out; */
   display: block;
   touch-action: pan-y;
 }
@@ -141,6 +141,7 @@ body {
 
 .property__detail-text {
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 /* FEATURES */
@@ -189,7 +190,7 @@ body {
 
 /* DESCRIPCIÓN */
 .property__description {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 0.85rem;
 }
