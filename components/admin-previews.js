@@ -17,7 +17,8 @@ function fillPreview(previewData) {
   const amenityIcons = {
     Alberca: "pool.svg",
     Gym: "gym.svg",
-    "Cine / sala de proyección": "clapperboard.svg",
+    Cine: "clapperboard.svg",
+    "Sala de proyección": "film.svg",
     Padel: "padel.svg",
     "Ludoteca / area de juegos infantiles": "playground.svg",
     Jacuzzi: "jacuzzi.svg",
@@ -25,7 +26,9 @@ function fillPreview(previewData) {
     Vapor: "steam.svg",
     Restaurante: "restaurant.svg",
     Asadores: "grill.svg",
+    Asador: "grill.svg",
     Jardines: "garden.svg",
+    Jardín: "garden.svg",
     "Áreas verdes": "garden.svg",
     "Seguridad 24hrs": "security.svg",
     "Area de mascotas": "pets.svg",
@@ -36,6 +39,7 @@ function fillPreview(previewData) {
     "Salón de juegos": "games.svg",
     "Jogging track": "jogging.svg",
     "Sky Bar": "bar.svg",
+    Bar: "bar.svg",
     "Social rooms": "social_room.svg",
     Fut: "soccer.svg",
     Cafeteria: "coffee.svg",
@@ -43,6 +47,17 @@ function fillPreview(previewData) {
     "Sala de juntas": "meeting.svg",
     "Centro de copiado": "copy.svg",
     Lavanderia: "laundry.svg",
+    "Área de lavado": "laundry.svg",
+    Cocina: "kitchen.svg",
+    "Cocina integral": "kitchen.svg",
+    Terraza: "balcony.svg",
+    Balcón: "balcony.svg",
+    Patio: "deck.svg",
+    "Cuarto TV": "tv-minimal.svg",
+    Estudio: "library-big.svg",
+    Closet: "checkroom.svg",
+    Vestidor: "checkroom.svg",
+    Bodega: "warehouse.svg",
   };
 
   // Features puede venir como string o como array
@@ -81,7 +96,7 @@ function fillPreview(previewData) {
           src="../images/icons/${icon}"
           alt="${name}"
         />
-        <span>${name}</span>
+        <span class="property__amenity-text">${name}</span>
       </div>
     `;
     })
@@ -185,7 +200,7 @@ function fillPreview(previewData) {
             src="../images/icons/bed.svg"
             alt=""
           />
-          <span>${bedrooms} Recámara(s)</span>
+          <span class="property__detail-text">${bedrooms} Recámara(s)</span>
         </div>
 
         <div class="property__detail">
@@ -203,7 +218,7 @@ function fillPreview(previewData) {
             src="../images/icons/car.svg"
             alt=""
           />
-          <span>${parking} Estacionamiento(s)</span>
+          <span class="property__detail-text">${parking} Estacionamiento(s)</span>
         </div>
 
         <div class="property__detail">
@@ -212,7 +227,7 @@ function fillPreview(previewData) {
             src="../images/icons/ruler.svg"
             alt=""
           />
-          <span>${construction} m²</span>
+          <span class="property__detail-text">${construction} m²</span>
         </div>
       </div>
 
@@ -240,6 +255,22 @@ function fillPreview(previewData) {
 
       <div>
       <p class="property__location-label">${address}</p>
+      </div>
+
+      <div class="property__map-section">
+        <h2 class="property__section-title">
+          Ubicación
+        </h2>
+
+        <iframe
+          class="property__map"
+          src="https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div>
         <a
         href=${mapLink}
         target="_blank"
