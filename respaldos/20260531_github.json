@@ -1164,7 +1164,7 @@
     {
       "id": 26,
       "hero": "./images/City_Blue_Santafe/City_Blue_Santafe_hero.jpeg",
-      "title": "Departamento en renta amueblado en City Bliue, Santa Fe",
+      "title": "Departamento en renta amueblado en City Blue, Santa Fe",
       "price": "35,000.00 MXN",
       "description": "Frente a la Universidad Iberoamericana.\nAmenidades exclusivas: alberca, gym, restaurante, padel, salón de eventos, cine, sauna, vapor y salón inglés.",
       "features": "68m²\n2 Recámaras\n2 Baños\n2 Estacionamientos\nLa renta incluye mantenimiento y servicios",
@@ -1223,7 +1223,47 @@
       "theme": "theme-modern",
       "address": "City Blue, Santa Fe",
       "isLiked": false
+    },
+    {
+      "id": 27,
+      "hero": "./images/Blum_Residencial/Blum_hero.jpeg",
+      "title": "Departamento en venta en Blum, Santa Fe",
+      "price": "3,300,000.00 MXN",
+      "description": "Oxxo dentro del desarrollo",
+      "features": "54m²\n1 Recámara\n1 Baño\n1 Estacionamiento\nAlberca\nGym\nLudoteca\nCafetería\nSala de Spa\nCine\nJardín con juegos para niños\nRoof garden con jacuzzi y área para asado",
+      "gallery": [
+        "./images/caroProp27_2.jpeg",
+        "./images/caroProp27_3.jpeg",
+        "./images/caroProp27_1.jpeg",
+        "./images/caroProp27_4.jpeg",
+        "./images/caroProp27_5.jpeg",
+        "./images/caroProp27_6.jpeg",
+        "./images/caroProp27_7.jpeg",
+        "./images/caroProp27_8.jpeg",
+        "./images/caroProp27_9.jpeg",
+        "./images/caroProp27_10.jpeg",
+        "./images/caroProp27_11.jpeg",
+        "./images/caroProp27_12.jpeg",
+        "./images/caroProp27_13.jpeg",
+        "./images/Blum_Residencial/Blum_1.jpeg",
+        "./images/Blum_Residencial/Blum_2.jpeg",
+        "./images/Blum_Residencial/Blum_3.jpeg",
+        "./images/Blum_Residencial/Blum_4.jpeg",
+        "./images/Blum_Residencial/Blum_5.jpeg",
+        "./images/Blum_Residencial/Blum_6.jpeg",
+        "./images/Blum_Residencial/Blum_7.jpeg",
+        "./images/Blum_Residencial/Blum_8.jpeg",
+        "./images/Blum_Residencial/Blum_9.jpeg",
+        "./images/Blum_Residencial/Blum_10.jpeg",
+        "./images/Blum_Residencial/Blum_12.jpeg",
+        "./images/Blum_Residencial/Blum_13.jpeg",
+        "./images/Blum_Residencial/Blum_14.jpeg"
+      ],
+      "time": "180726",
+      "theme": "theme-modern",
+      "address": "Blum Residencial, Santa Fe",
+      "isLiked": false
     }
   ],
-  "publishedMaxId": 26
+  "publishedMaxId": 27
 }
