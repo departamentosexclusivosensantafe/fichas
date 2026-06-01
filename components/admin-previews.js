@@ -14,6 +14,36 @@ function fillPreview(previewData) {
   const time = previewData.time.trim();
   const theme = previewData.theme.trim() || "theme-modern";
   const address = previewData.address.trim();
+  const amenityIcons = {
+    Alberca: "pool.svg",
+    Gym: "gym.svg",
+    "Cine / sala de proyección": "clapperboard.svg",
+    Padel: "padel.svg",
+    "Ludoteca / area de juegos infantiles": "playground.svg",
+    Jacuzzi: "jacuzzi.svg",
+    Sauna: "sauna.svg",
+    Vapor: "steam.svg",
+    Restaurante: "restaurant.svg",
+    Asadores: "grill.svg",
+    Jardines: "garden.svg",
+    "Áreas verdes": "garden.svg",
+    "Seguridad 24hrs": "security.svg",
+    "Area de mascotas": "pets.svg",
+    "Salón de eventos": "salon.svg",
+    "Business Center": "business.svg",
+    "Salón ingles": "tea.svg",
+    "Sala de jóvenes": "boy.svg",
+    "Salón de juegos": "games.svg",
+    "Jogging track": "jogging.svg",
+    "Sky Bar": "bar.svg",
+    "Social rooms": "social_room.svg",
+    Fut: "soccer.svg",
+    Cafeteria: "coffee.svg",
+    "Cigar room": "cigarette.svg",
+    "Sala de juntas": "meeting.svg",
+    "Centro de copiado": "copy.svg",
+    Lavanderia: "laundry.svg",
+  };
 
   // Features puede venir como string o como array
   let featuresRaw = previewData.features;
@@ -39,18 +69,22 @@ function fillPreview(previewData) {
   }
 
   const amenitiesHtml = amenitiesList
-    .map(
-      (a) => `
+    .map((amenity) => {
+      const name = amenity.trim();
+
+      const icon = amenityIcons[name] || "check.svg";
+
+      return `
       <div class="property__amenity">
         <img
           class="property__amenity-icon"
-          src="../images/icons/check.svg"
-          alt=""
+          src="../images/icons/${icon}"
+          alt="${name}"
         />
-        <span>${a.trim()}</span>
+        <span>${name}</span>
       </div>
-    `,
-    )
+    `;
+    })
     .join("");
 
   const gallery = previewData.gallery || [];
@@ -190,7 +224,7 @@ function fillPreview(previewData) {
       </div>
 
       <div>
-         <h2 class="property__section-title">
+        <h2 class="property__section-title">
           Amenidades
         </h2>
         <div class="property__amenities-grid">
