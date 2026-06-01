@@ -725,9 +725,3 @@ body {
     height: 10px;
   }
 }
-
-@media screen and (max-width: 768px) {
-  .property__amenities-grid {
-    grid-template-columns: 1fr;
-  }
-}
