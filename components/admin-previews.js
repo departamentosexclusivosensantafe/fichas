@@ -31,7 +31,7 @@ function fillPreview(previewData) {
     "Area de mascotas": "pets.svg",
     "Salón de eventos": "salon.svg",
     "Business Center": "business.svg",
-    "Salón ingles": "tea.svg",
+    "Salón inglés": "tea.svg",
     "Sala de jóvenes": "boy.svg",
     "Salón de juegos": "games.svg",
     "Jogging track": "jogging.svg",
