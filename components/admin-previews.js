@@ -63,7 +63,83 @@ function fillPreview(previewData) {
     Bodega: "warehouse.svg",
   };
 
-  // Features puede venir como string o como array
+  /* CARACTERISTICAS PRINCIPALES */
+  let mainFeaturesHtml = "";
+
+  if (Number(bedrooms) > 0) {
+    mainFeaturesHtml += `
+    <div class="property__detail">
+      <img
+        class="property__detail-icon"
+        src="../images/icons/bed.svg"
+        alt=""
+      />
+      <span class="property__detail-text">
+        ${bedrooms} Recámara(s)
+      </span>
+    </div>
+  `;
+  }
+
+  if (Number(bathrooms) > 0) {
+    mainFeaturesHtml += `
+    <div class="property__detail">
+      <img
+        class="property__detail-icon"
+        src="../images/icons/bath.svg"
+        alt=""
+      />
+      <span class="property__detail-text">
+        ${bathrooms} Baño(s)
+      </span>
+    </div>
+  `;
+  }
+
+  if (Number(parking) > 0) {
+    mainFeaturesHtml += `
+    <div class="property__detail">
+      <img
+        class="property__detail-icon"
+        src="../images/icons/car.svg"
+        alt=""
+      />
+      <span class="property__detail-text">
+        ${parking} Estacionamiento(s)
+      </span>
+    </div>
+  `;
+  }
+
+  if (Number(construction) > 0) {
+    mainFeaturesHtml += `
+    <div class="property__detail">
+      <img
+        class="property__detail-icon"
+        src="../images/icons/ruler.svg"
+        alt=""
+      />
+      <span class="property__detail-text">
+        ${construction} m²
+      </span>
+    </div>
+  `;
+  }
+
+  const mainFeaturesSection =
+    mainFeaturesHtml.trim() !== ""
+      ? `
+      <h2 class="property__section-title">
+        Características principales
+      </h2>
+
+      <div class="property__details-grid">
+        ${mainFeaturesHtml}
+      </div>
+    `
+      : "";
+
+  /* FEATURES (CARACTERÍSTICAS) */
   let featuresRaw = previewData.features;
   let featuresList = [];
 
@@ -77,6 +153,20 @@ function fillPreview(previewData) {
     .map((f) => `<li class="property__feature">${f.trim()}</li>`)
     .join("");
 
+  const featuresSection =
+    featuresHtml.trim() !== ""
+      ? `
+      <div>
+        <h2>Características</h2>
+
+        <ul class="property__features-list">
+          ${featuresHtml}
+        </ul>
+      </div>
+    `
+      : "";
+
+  /* AMENITIES */
   const amenitiesRaw = previewData.amenities || "";
   let amenitiesList = [];
 
@@ -105,6 +195,22 @@ function fillPreview(previewData) {
     })
     .join("");
 
+  const amenitiesSection =
+    amenitiesHtml.trim() !== ""
+      ? `
+      <div>
+        <h2 class="property__section-title">
+          Amenidades
+        </h2>
+
+        <div class="property__amenities-grid">
+          ${amenitiesHtml}
+        </div>
+      </div>
+    `
+      : "";
+
+  /* GALERIA */
   const gallery = previewData.gallery || [];
 
   if (!image.startsWith("https://")) {
@@ -117,7 +223,6 @@ function fillPreview(previewData) {
     return;
   }
 
-  // Ahora el preview vive dentro de /previews/
   const previewUrl = `${baseUrl}previews/propiedad${id}${time}_preview.html`;
 
   const absoluteGallery = gallery.map((img) => {
@@ -125,11 +230,13 @@ function fillPreview(previewData) {
     return absolutePath;
   });
 
+  /* MAPA */
   function getMapLink() {
     return `"https://www.google.com/maps?q=${encodeURIComponent(address)}"`;
   }
   const mapLink = getMapLink();
 
+  /* AGENTE */
   function getAgentBlock(showAgent) {
     if (!showAgent) return "";
 
@@ -193,68 +300,17 @@ function fillPreview(previewData) {
         <p class="property__price">${price}</p>
       </div>
 
-      <h2 class="property__section-title">
-        Características principales
-      </h2>
-      <div class="property__details-grid">
-        <div class="property__detail">
-          <img
-            class="property__detail-icon"
-            src="../images/icons/bed.svg"
-            alt=""
-          />
-          <span class="property__detail-text">${bedrooms} Recámara(s)</span>
-        </div>
+      ${mainFeaturesSection}
 
-        <div class="property__detail">
-          <img
-            class="property__detail-icon"
-            src="../images/icons/bath.svg"
-            alt=""
-          />
-          <span class="property__detail-text">${bathrooms} Baño(s)</span>
-        </div>
+      ${featuresSection}
 
-        <div class="property__detail">
-          <img
-            class="property__detail-icon"
-            src="../images/icons/car.svg"
-            alt=""
-          />
-          <span class="property__detail-text">${parking} Estacionamiento(s)</span>
-        </div>
-
-        <div class="property__detail">
-          <img
-            class="property__detail-icon"
-            src="../images/icons/ruler.svg"
-            alt=""
-          />
-          <span class="property__detail-text">${construction} m²</span>
-        </div>
-      </div>
-
-      <div>
-        <h2>Características</h2>
-        <ul class="property__features-list">
-          ${featuresHtml}
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="property__section-title">
-          Amenidades
-        </h2>
-        <div class="property__amenities-grid">
-          ${amenitiesHtml}
-        </div>
-      </div>
+      ${amenitiesSection}
 
       <div>
         <p class="property__description">${description}</p>
       </div>
 
-        ${getAgentBlock(showAgent)}
+      ${getAgentBlock(showAgent)}
 
       <div>
       <p class="property__location-label">${address}</p>
