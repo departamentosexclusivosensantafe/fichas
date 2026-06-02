@@ -201,11 +201,13 @@ class Card {
     cardConstruction.textContent = `${this._construction} m²`;
 
     const cardFeatures = this._cardElement.querySelector(".card__features");
-    const pattern = /[^;\n\t]+/g;
-    const featuresArray = this._features.match(pattern);
     let featuresStringDisplay = "";
-    for (let feature of featuresArray) {
-      featuresStringDisplay += "- " + feature + "<br>";
+    const pattern = /[^;\n\t]+/g;
+    if (this._features !== "") {
+      const featuresArray = this._features.match(pattern);
+      for (let feature of featuresArray) {
+        featuresStringDisplay += "- " + feature + "<br>";
+      }
     }
     cardFeatures.innerHTML = featuresStringDisplay;
 

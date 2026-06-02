@@ -1,66 +1,66 @@
 import StorageService from "../components/StorageService.js";
 
 function fillPreview(previewData) {
-  const id = previewData.id.trim();
-  const title = previewData.title.trim();
-  const description = previewData.descriptionOG.trim();
-  const image = previewData.imageOG.trim();
-  const baseUrl = previewData.urlProject.trim();
-  const price = previewData.price.trim();
-  const bedrooms = (previewData.bedrooms || "").trim();
-  const bathrooms = (previewData.bathrooms || "").trim();
-  const parking = (previewData.parking || "").trim();
-  const construction = (previewData.construction || "").trim();
-  const time = previewData.time.trim();
+  const id = previewData.id.trim() || "";
+  const title = previewData.title.trim() || "";
+  const description = previewData.descriptionOG.trim() || "";
+  const image = previewData.imageOG.trim() || "";
+  const baseUrl = previewData.urlProject.trim() || "";
+  const price = previewData.price.trim() || "";
+  const bedrooms = previewData.bedrooms.trim() || "";
+  const bathrooms = previewData.bathrooms.trim() || "";
+  const parking = previewData.parking.trim() || "";
+  const construction = previewData.construction.trim() || "";
+  const time = previewData.time.trim() || Date.now().toString();
   const theme = previewData.theme.trim() || "theme-modern";
-  const address = previewData.address.trim();
+  const address = previewData.address.trim() || "";
   const amenityIcons = {
-    Alberca: "pool.svg",
-    Gym: "gym.svg",
-    Gimnasio: "gym.svg",
-    Cine: "clapperboard.svg",
-    "Sala de proyección": "film.svg",
-    Padel: "padel.svg",
-    Ludoteca: "playground.svg",
-    "Área de juegos infantiles": "playground.svg",
-    Jacuzzi: "jacuzzi.svg",
-    Sauna: "sauna.svg",
-    Vapor: "steam.svg",
-    Restaurante: "restaurant.svg",
-    Asadores: "grill.svg",
-    Asador: "grill.svg",
-    Jardines: "garden.svg",
-    Jardín: "garden.svg",
-    "Áreas verdes": "garden.svg",
-    "Seguridad 24hrs": "security.svg",
-    "Área de mascotas": "pets.svg",
-    "Salón de eventos": "salon.svg",
-    "Salón de fiestas": "salon.svg",
-    "Business Center": "business.svg",
-    "Salón inglés": "tea.svg",
-    "Sala de jóvenes": "boy.svg",
-    "Salón de juegos": "games.svg",
-    "Jogging track": "jogging.svg",
-    "Sky Bar": "bar.svg",
-    Bar: "bar.svg",
-    "Social rooms": "social_room.svg",
-    Fut: "soccer.svg",
-    Cafetería: "coffee.svg",
-    "Cigar room": "cigarette.svg",
-    "Sala de juntas": "meeting.svg",
-    "Centro de copiado": "copy.svg",
-    Lavanderia: "laundry.svg",
-    "Área de lavado": "laundry.svg",
-    Cocina: "kitchen.svg",
-    "Cocina integral": "kitchen.svg",
-    Terraza: "balcony.svg",
-    Balcón: "balcony.svg",
-    Patio: "deck.svg",
-    "Cuarto TV": "tv-minimal.svg",
-    Estudio: "library-big.svg",
-    Closet: "checkroom.svg",
-    Vestidor: "checkroom.svg",
-    Bodega: "warehouse.svg",
+    alberca: "pool.svg",
+    gym: "gym.svg",
+    gimnasio: "gym.svg",
+    cine: "clapperboard.svg",
+    "sala de proyeccion": "film.svg",
+    padel: "padel.svg",
+    ludoteca: "playground.svg",
+    "area de juegos infantiles": "playground.svg",
+    jacuzzi: "jacuzzi.svg",
+    sauna: "sauna.svg",
+    vapor: "steam.svg",
+    restaurante: "restaurant.svg",
+    asadores: "grill.svg",
+    asador: "grill.svg",
+    jardines: "garden.svg",
+    jardin: "garden.svg",
+    "areas verdes": "garden.svg",
+    "seguridad 24hrs": "security.svg",
+    "area de mascotas": "pets.svg",
+    "salon de eventos": "salon.svg",
+    "salon de fiestas": "salon.svg",
+    "business center": "business.svg",
+    "salon ingles": "tea.svg",
+    "sala de jovenes": "boy.svg",
+    "salon de juegos": "games.svg",
+    "jogging track": "jogging.svg",
+    "sky bar": "bar.svg",
+    bar: "bar.svg",
+    "social rooms": "social_room.svg",
+    fut: "soccer.svg",
+    cafeteria: "coffee.svg",
+    "cigar room": "cigarette.svg",
+    "sala de juntas": "meeting.svg",
+    "centro de copiado": "copy.svg",
+    lavanderia: "laundry.svg",
+    "area de lavado": "laundry.svg",
+    cocina: "kitchen.svg",
+    "cocina integral": "kitchen.svg",
+    terraza: "balcony.svg",
+    balcon: "balcony.svg",
+    patio: "deck.svg",
+    "cuarto TV": "tv-minimal.svg",
+    estudio: "library-big.svg",
+    closet: "checkroom.svg",
+    vestidor: "checkroom.svg",
+    bodega: "warehouse.svg",
   };
 
   /* CARACTERISTICAS PRINCIPALES */
@@ -149,6 +149,11 @@ function fillPreview(previewData) {
     featuresList = featuresRaw.split(/[\n]/);
   }
 
+  /* Lo agregué porque features simpre manda un valor "" */
+  if (featuresList.length >= 1 && featuresList[0] === "") {
+    featuresList = [];
+  }
+
   const featuresHtml = featuresList
     .map((f) => `<li class="property__feature">${f.trim()}</li>`)
     .join("");
@@ -183,9 +188,13 @@ function fillPreview(previewData) {
 
   const amenitiesHtml = amenitiesList
     .map((amenity) => {
+      function removerAcentos(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+      const search = removerAcentos(amenity.trim()).toLowerCase();
       const name = amenity.trim();
 
-      const icon = amenityIcons[name] || "check.svg";
+      const icon = amenityIcons[search] || "check.svg";
 
       return `
       <div class="property__amenity">
