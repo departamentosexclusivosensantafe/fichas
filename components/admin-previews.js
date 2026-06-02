@@ -33,7 +33,7 @@ function fillPreview(previewData) {
     Jardín: "garden.svg",
     "Áreas verdes": "garden.svg",
     "Seguridad 24hrs": "security.svg",
-    "Area de mascotas": "pets.svg",
+    "Área de mascotas": "pets.svg",
     "Salón de eventos": "salon.svg",
     "Salón de fiestas": "salon.svg",
     "Business Center": "business.svg",
@@ -45,7 +45,7 @@ function fillPreview(previewData) {
     Bar: "bar.svg",
     "Social rooms": "social_room.svg",
     Fut: "soccer.svg",
-    Cafeteria: "coffee.svg",
+    Cafetería: "coffee.svg",
     "Cigar room": "cigarette.svg",
     "Sala de juntas": "meeting.svg",
     "Centro de copiado": "copy.svg",
@@ -175,7 +175,13 @@ function fillPreview(previewData) {
   } else if (typeof amenitiesRaw === "string") {
     amenitiesList = amenitiesRaw.split(/[\n]/);
   }
-
+  alert(
+    amenitiesList +
+      " -aL " +
+      amenitiesList.length +
+      " -Type " +
+      typeof amenitiesList,
+  );
   const amenitiesHtml = amenitiesList
     .map((amenity) => {
       const name = amenity.trim();
@@ -195,6 +201,8 @@ function fillPreview(previewData) {
     })
     .join("");
 
+  alert("*" + amenitiesHtml + "*");
+  alert("**" + amenitiesHtml.trim() + "**");
   const amenitiesSection =
     amenitiesHtml.trim() !== ""
       ? `
