@@ -32,7 +32,6 @@ const propertiesData = StorageService.getProperties(Properties);
 
 const handleCardClick = (id, time) => {
   const publishedMax = StorageService.getMaxPublishedId();
-
   if (Number(id) > publishedMax) {
     alert(
       "Esta propiedad aún no está publicada.\n\n" +
@@ -99,8 +98,13 @@ function handleCardFormSubmit(formData) {
       hero: formData.hero,
       title: formData.title,
       price: formData.price,
-      description: formData.description,
+      bedrooms: formData.bedrooms,
+      bathrooms: formData.bathrooms,
+      parking: formData.parking,
+      construction: formData.construction,
       features: formData.features,
+      amenities: formData.amenities,
+      description: formData.description,
       gallery: formData.gallery,
       time: formData.time,
       theme: formData.theme,
@@ -223,7 +227,12 @@ function handlePreviewFormSubmit(formData) {
     imageOG: formData.imageOG,
     urlProject: formData.urlProject,
     price: formData.price,
+    bedrooms: formData.bedrooms,
+    bathrooms: formData.bathrooms,
+    parking: formData.parking,
+    construction: formData.construction,
     features: formData.features,
+    amenities: formData.amenities,
     gallery: formData.gallery,
     time: formData.time,
     theme: formData.theme,
