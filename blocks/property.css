@@ -166,6 +166,10 @@ body {
 }
 
 /* AMENITIES */
+.property__amenities-section {
+  margin-bottom: 1.5rem;
+}
+
 .property__amenities-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -190,7 +194,6 @@ body {
 
 /* DESCRIPCIÓN */
 .property__description {
-  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 0.85rem;
 }

@@ -140,7 +140,7 @@ function fillPreview(previewData) {
       : "";
 
   /* FEATURES (CARACTERÍSTICAS) */
-  let featuresRaw = previewData.features;
+  let featuresRaw = previewData.features || "";
   let featuresList = [];
 
   if (Array.isArray(featuresRaw)) {
@@ -175,13 +175,12 @@ function fillPreview(previewData) {
   } else if (typeof amenitiesRaw === "string") {
     amenitiesList = amenitiesRaw.split(/[\n]/);
   }
-  alert(
-    amenitiesList +
-      " -aL " +
-      amenitiesList.length +
-      " -Type " +
-      typeof amenitiesList,
-  );
+
+  /* Lo agregué porque amenities simpre manda un valor "" */
+  if (amenitiesList.length >= 1 && amenitiesList[0] === "") {
+    amenitiesList = [];
+  }
+
   const amenitiesHtml = amenitiesList
     .map((amenity) => {
       const name = amenity.trim();
@@ -201,12 +200,10 @@ function fillPreview(previewData) {
     })
     .join("");
 
-  alert("*" + amenitiesHtml + "*");
-  alert("**" + amenitiesHtml.trim() + "**");
   const amenitiesSection =
     amenitiesHtml.trim() !== ""
       ? `
-      <div>
+      <div class="property__amenities-section">
         <h2 class="property__section-title">
           Amenidades
         </h2>
@@ -214,6 +211,19 @@ function fillPreview(previewData) {
         <div class="property__amenities-grid">
           ${amenitiesHtml}
         </div>
+      </div>
+    `
+      : "";
+
+  const descriptionSection =
+    description.trim() !== ""
+      ? `
+      <div>
+        <h2 class="property__section-title">
+          Descripción
+        </h2>
+
+        <p class="property__description">${description}</p>
       </div>
     `
       : "";
@@ -314,9 +324,7 @@ function fillPreview(previewData) {
 
       ${amenitiesSection}
 
-      <div>
-        <p class="property__description">${description}</p>
-      </div>
+      ${descriptionSection}
 
       ${getAgentBlock(showAgent)}
 
