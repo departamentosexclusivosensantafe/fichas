@@ -23,6 +23,7 @@ function fillPreview(previewData) {
     padel: "padel.svg",
     ludoteca: "playground.svg",
     "area de juegos infantiles": "playground.svg",
+    "jardin con juegos infantiles": "playground.svg",
     jacuzzi: "jacuzzi.svg",
     sauna: "sauna.svg",
     vapor: "steam.svg",
