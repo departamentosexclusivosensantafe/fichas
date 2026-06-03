@@ -164,7 +164,7 @@ function fillPreview(previewData) {
     featuresHtml.trim() !== ""
       ? `
       <div>
-        <h2>Características</h2>
+        <h2 class="property__section-title">Características</h2>
 
         <ul class="property__features-list">
           ${featuresHtml}
