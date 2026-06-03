@@ -152,7 +152,7 @@ function fillPreview(previewData) {
   }
 
   /* Lo agregué porque features simpre manda un valor "" */
-  if (featuresList.length >= 1 && featuresList[0] === "") {
+  if (featuresList.length === 1 && featuresList[0] === "") {
     featuresList = [];
   }
 
@@ -184,7 +184,7 @@ function fillPreview(previewData) {
   }
 
   /* Lo agregué porque amenities simpre manda un valor "" */
-  if (amenitiesList.length >= 1 && amenitiesList[0] === "") {
+  if (amenitiesList.length === 1 && amenitiesList[0] === "") {
     amenitiesList = [];
   }
 
