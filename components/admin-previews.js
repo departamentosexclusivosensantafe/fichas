@@ -67,6 +67,21 @@ function fillPreview(previewData) {
   /* CARACTERISTICAS PRINCIPALES */
   let mainFeaturesHtml = "";
 
+  if (Number(construction) > 0) {
+    mainFeaturesHtml += `
+    <div class="property__detail">
+      <img
+        class="property__detail-icon"
+        src="../images/icons/ruler.svg"
+        alt=""
+      />
+      <span class="property__detail-text">
+        ${construction} m²
+      </span>
+    </div>
+  `;
+  }
+
   if (Number(bedrooms) > 0) {
     mainFeaturesHtml += `
     <div class="property__detail">
@@ -107,21 +122,6 @@ function fillPreview(previewData) {
       />
       <span class="property__detail-text">
         ${parking} Estacionamiento(s)
-      </span>
-    </div>
-  `;
-  }
-
-  if (Number(construction) > 0) {
-    mainFeaturesHtml += `
-    <div class="property__detail">
-      <img
-        class="property__detail-icon"
-        src="../images/icons/ruler.svg"
-        alt=""
-      />
-      <span class="property__detail-text">
-        ${construction} m²
       </span>
     </div>
   `;
