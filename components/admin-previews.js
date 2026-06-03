@@ -379,13 +379,7 @@ function fillPreview(previewData) {
     if (!img || !btnBack || !btnForward || images.length === 0) return;
 
     function updateSlider() {
-      // img.style.opacity = 0;
-
-      // setTimeout(() => {
         img.src = images[currentIndex];
-      //   img.style.opacity = 1;
-      // }, 150);
-
       if (counter) {
         counter.textContent =
           (currentIndex + 1) + " / " + images.length;
@@ -426,12 +420,13 @@ function fillPreview(previewData) {
       if (Math.abs(diff) < 50) return;
 
       if (diff > 0) {
-        // swipe izquierda → siguiente
-        currentIndex = (currentIndex + 1) % images.length;
-      } else {
-        // swipe derecha → anterior
+        // swipe izquierda → anterior
         currentIndex =
           (currentIndex - 1 + images.length) % images.length;
+
+      } else {
+        // swipe derecha → siguiente
+        currentIndex = (currentIndex + 1) % images.length;
       }
 
       updateSlider();
