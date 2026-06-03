@@ -753,6 +753,10 @@ body {
   .property__map {
     height: 250px;
   }
+
+  .property__counter {
+    font-size: 0.6rem;
+  }
   /*
   .property__amenities-grid {
     grid-template-columns: 1fr;
