@@ -61,6 +61,7 @@ function fillPreview(previewData) {
     closet: "checkroom.svg",
     vestidor: "checkroom.svg",
     bodega: "warehouse.svg",
+    yoga: "self_improvement.svg",
   };
 
   /* CARACTERISTICAS PRINCIPALES */
