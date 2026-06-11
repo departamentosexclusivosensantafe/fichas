@@ -64,7 +64,7 @@ function fillPreview(previewData) {
     bodega: "warehouse.svg",
     yoga: "self_improvement.svg",
     spinning: "directions_bike.svg",
-    lounge: "weekend,svg",
+    lounge: "weekend.svg",
   };
 
   /* CARACTERISTICAS PRINCIPALES */
