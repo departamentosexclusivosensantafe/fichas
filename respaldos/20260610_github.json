@@ -1262,7 +1262,7 @@
       "time": "210836",
       "theme": "theme-modern",
       "address": "City Blue, Santa Fe",
-      "isLiked": false
+      "isLiked": true
     },
     {
       "id": 27,
@@ -1303,7 +1303,7 @@
       "time": "213658",
       "theme": "theme-modern",
       "address": "Blum Residencial, Santa Fe",
-      "isLiked": false,
+      "isLiked": true,
       "bedrooms": "1",
       "bathrooms": "1",
       "parking": "1",
