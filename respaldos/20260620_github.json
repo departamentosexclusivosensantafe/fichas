@@ -1267,10 +1267,10 @@
     {
       "id": 27,
       "hero": "./images/Blum_Residencial/Blum_hero.jpeg",
-      "title": "Departamento en venta en Blum, Santa Fe",
-      "price": "3,300,000.00 MXN",
+      "title": "Departamento en renta en Blum, Santa Fe",
+      "price": "21,000.00 MXN",
       "description": "Oxxo dentro del desarrollo",
-      "features": "",
+      "features": "Incluye mantenimiento",
       "gallery": [
         "./images/Blum_Residencial/Blum_hero.jpeg",
         "./images/caroProp27/caroProp27_2.jpeg",
@@ -1300,7 +1300,7 @@
         "./images/Blum_Residencial/Blum_13.jpeg",
         "./images/Blum_Residencial/Blum_14.jpeg"
       ],
-      "time": "213658",
+      "time": "142016",
       "theme": "theme-modern",
       "address": "Blum Residencial, Santa Fe",
       "isLiked": true,
@@ -1532,8 +1532,7 @@
         "./images/caroProp32/caroProp32_24.jpeg",
         "./images/caroProp32/caroProp32_25.jpeg",
         "./images/caroProp32/caroProp32_26.jpeg",
-        "./images/caroProp32/caroProp32_27.jpeg",
-        "./images/caroProp32/caroProp32_28.jpeg"
+        "./images/caroProp32/caroProp32_27.jpeg"
       ],
       "time": "161529",
       "theme": "theme-modern",
@@ -1578,7 +1577,7 @@
       "time": "170742",
       "theme": "theme-modern",
       "address": "Avenida Arteaga y Salazar 770, Contadero",
-      "isLiked": false
+      "isLiked": true
     }
   ],
   "publishedMaxId": 33

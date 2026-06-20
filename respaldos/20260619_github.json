@@ -1532,14 +1532,53 @@
         "./images/caroProp32/caroProp32_24.jpeg",
         "./images/caroProp32/caroProp32_25.jpeg",
         "./images/caroProp32/caroProp32_26.jpeg",
-        "./images/caroProp32/caroProp32_27.jpeg",
-        "./images/caroProp32/caroProp32_28.jpeg"
+        "./images/caroProp32/caroProp32_27.jpeg"
       ],
       "time": "161529",
       "theme": "theme-modern",
       "address": "Stampa Residencial",
+      "isLiked": true
+    },
+    {
+      "id": 33,
+      "hero": "./images/caroProp33/caroProp33_hero.jpeg",
+      "title": "Departamento en venta en Avenida Arteaga y Salazar 770, Contadero",
+      "price": "2,700,000.00 MXN",
+      "bedrooms": "0",
+      "bathrooms": "0",
+      "parking": "1",
+      "construction": "40",
+      "features": "1 Bodega.\nEstacionamiento techado.\nTercer piso.\nElevador desde el estacionamiento.",
+      "amenities": "",
+      "description": "",
+      "gallery": [
+        "./images/caroProp33/caroProp33_hero.jpeg",
+        "./images/caroProp33/caroProp33_1.jpeg",
+        "./images/caroProp33/caroProp33_2.jpeg",
+        "./images/caroProp33/caroProp33_3.jpeg",
+        "./images/caroProp33/caroProp33_4.jpeg",
+        "./images/caroProp33/caroProp33_5.jpeg",
+        "./images/caroProp33/caroProp33_6.jpeg",
+        "./images/caroProp33/caroProp33_7.jpeg",
+        "./images/caroProp33/caroProp33_8.jpeg",
+        "./images/caroProp33/caroProp33_9.jpeg",
+        "./images/caroProp33/caroProp33_10.jpeg",
+        "./images/caroProp33/caroProp33_11.jpeg",
+        "./images/caroProp33/caroProp33_12.jpeg",
+        "./images/caroProp33/caroProp33_13.jpeg",
+        "./images/caroProp33/caroProp33_14.jpeg",
+        "./images/caroProp33/caroProp33_15.jpeg",
+        "./images/caroProp33/caroProp33_16.jpeg",
+        "./images/caroProp33/caroProp33_17.jpeg",
+        "./images/caroProp33/caroProp33_18.jpeg",
+        "./images/caroProp33/caroProp33_19.jpeg",
+        "./images/caroProp33/caroProp33_20.jpeg"
+      ],
+      "time": "170742",
+      "theme": "theme-modern",
+      "address": "Avenida Arteaga y Salazar 770, Contadero",
       "isLiked": false
     }
   ],
-  "publishedMaxId": 31
+  "publishedMaxId": 33
 }
