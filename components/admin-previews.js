@@ -379,6 +379,15 @@ function fillPreview(previewData) {
     const btnForward = document.getElementById("btnForward");
     const counter = document.getElementById("imageCounter");
 
+    // Precargar todas las imágenes de la galería
+    const preloadedImages = [];
+
+    images.forEach((url) => {
+      const preload = new Image();
+      preload.src = url;
+      preloadedImages.push(preload);
+    });
+
     if (!img || !btnBack || !btnForward || images.length === 0) return;
 
     function updateSlider() {
