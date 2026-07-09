@@ -63,7 +63,7 @@ body {
   height: 100%;
   object-fit: contain;
   object-position: center center;
-  border-radius: 8px;
+  border-radius: 16px;
   /* transition: opacity 0.3s ease-in-out; */
   display: block;
   touch-action: pan-y;
