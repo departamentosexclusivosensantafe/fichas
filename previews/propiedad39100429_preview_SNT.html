@@ -16,15 +16,6 @@
       property="og:description"
       content="El estacionamiento es amplio caben 2 autos."
     />
-    <meta
-      property="og:image"
-      content="https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp39/caroProp39_hero.jpeg"
-    />
-    <meta
-      property="og:url"
-      content="https://departamentosexclusivosensantafe.github.io/fichas/previews/propiedad39100429_preview.html"
-    />
-    <meta property="og:type" content="website" />
   </head>
 
   <body class="theme-modern">
@@ -164,79 +155,5 @@
         </div>
       </section>
     </main>
-    <script>
-      (function () {
-        const images = [
-          "https://departamentosexclusivosensantafe.github.io/fichas/images/caroProp39/caroProp39_hero.jpeg",
-        ];
-        let currentIndex = 0;
-
-        const img = document.querySelector(".property__hero-image");
-        const btnBack = document.getElementById("btnBack");
-        const btnForward = document.getElementById("btnForward");
-        const counter = document.getElementById("imageCounter");
-
-        // Precargar todas las imágenes de la galería
-        const preloadedImages = [];
-
-        images.forEach((url) => {
-          const preload = new Image();
-          preload.src = url;
-          preloadedImages.push(preload);
-        });
-
-        if (!img || !btnBack || !btnForward || images.length === 0) return;
-
-        function updateSlider() {
-          img.src = images[currentIndex];
-          if (counter) {
-            counter.textContent = currentIndex + 1 + " / " + images.length;
-          }
-        }
-
-        // 🔹 render inicial
-        updateSlider();
-
-        btnForward.addEventListener("click", () => {
-          currentIndex = (currentIndex + 1) % images.length;
-          updateSlider();
-        });
-
-        btnBack.addEventListener("click", () => {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          updateSlider();
-        });
-
-        // Swipe support
-        let startX = 0;
-        let endX = 0;
-
-        img.addEventListener("touchstart", (e) => {
-          startX = e.touches[0].clientX;
-        });
-
-        img.addEventListener("touchend", (e) => {
-          endX = e.changedTouches[0].clientX;
-          handleSwipe();
-        });
-
-        function handleSwipe() {
-          const diff = startX - endX;
-
-          // sensibilidad mínima
-          if (Math.abs(diff) < 50) return;
-
-          if (diff > 0) {
-            // swipe izquierda → anterior
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-          } else {
-            // swipe derecha → siguiente
-            currentIndex = (currentIndex + 1) % images.length;
-          }
-
-          updateSlider();
-        }
-      })();
-    </script>
   </body>
 </html>
