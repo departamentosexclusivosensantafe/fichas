@@ -57,10 +57,18 @@ body {
   /* background: #e5e7eb; */
 }
 
+.property__hero-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s ease;
+}
+
 /* (Fichas V2)  */
 .property__hero-image {
   width: 100%;
   height: 100%;
+  flex: 0 0 100%; /*nuevo v3, (track)*/
   object-fit: contain;
   object-position: center center;
   border-radius: 16px;

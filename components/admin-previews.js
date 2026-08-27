@@ -261,6 +261,20 @@ function fillPreview(previewData) {
     return absolutePath;
   });
 
+  const sliderImages = absoluteGallery.length > 0 ? absoluteGallery : [image];
+
+  const sliderImagesHtml = sliderImages
+    .map(
+      (src) => `
+      <img
+        class="property__hero-image"
+        src="${src}"
+        alt="${title}"
+      />
+    `,
+    )
+    .join("");
+
   /* MAPA */
   function getMapLink() {
     return `"https://www.google.com/maps?q=${encodeURIComponent(address)}"`;
@@ -311,14 +325,24 @@ function fillPreview(previewData) {
     <section class="property__content">
 
       <div class="property__hero-slider">
-        <img class="property__hero-image" src="${absoluteGallery[0] || image}" alt="${title}" />
+        <div class="property__hero-track">
+          ${sliderImagesHtml}
+        </div>
 
         <button class="property__btn property__btn-left" id="btnBack">
-          <img class="property__btn_image" src="${baseUrl}images/arrow_back.png" alt="Left arrow">
+          <img
+            class="property__btn_image"
+            src="${baseUrl}images/arrow_back.png"
+            alt="Left arrow"
+          >
         </button>
 
         <button class="property__btn property__btn-right" id="btnForward">
-          <img class="property__btn_image" src="${baseUrl}images/arrow_forward.png" alt="Right arrow">
+          <img
+            class="property__btn_image"
+            src="${baseUrl}images/arrow_forward.png"
+            alt="Right arrow"
+          >
         </button>
       </div>
 
